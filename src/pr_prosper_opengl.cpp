@@ -1,16 +1,15 @@
-#include "pr_prosper_opengl.hpp"
-#include <pragma/pragma_module.hpp>
-#include <luainterface.hpp>
-#include <iostream>
+/* This Source Code Form is subject to the terms of the Mozilla Public
+* License, v. 2.0. If a copy of the MPL was not distributed with this
+* file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+#include <prosper_opengl_definitions.hpp>
+#include <gl_context.hpp>
 
 extern "C"
 {
-	void PRAGMA_EXPORT pragma_initialize_lua(Lua::Interface &l)
+	__declspec(dllexport) bool initialize_render_api(const std::string &engineName,bool enableValidation,std::shared_ptr<prosper::IPrContext> &outContext,std::string &errMsg)
 	{
-
-	}
-	void PRAGMA_EXPORT pragma_terminate_lua(Lua::Interface &l)
-	{
-		
+		outContext = prosper::GLContext::Create(engineName,enableValidation);
+		return true;
 	}
 };
