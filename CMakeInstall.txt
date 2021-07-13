@@ -1,4 +1,4 @@
 pragma_install_create_directory(modules/graphics)
 pragma_install_create_directory(modules/graphics/opengl)
-pragma_install_lib("${DEPENDENCY_PROSPER_OPENGL_LIBRARY}" "modules/graphics/opengl/" OPTIONAL)
 pragma_install_file("${CMAKE_CURRENT_BINARY_DIR}/modules/pr_prosper_opengl/${CONFIG_BUILD_TYPE}/pr_prosper_opengl${OS_LIB_BIN_EXT}" "modules/graphics/opengl/" OPTIONAL)
+pragma_install_file("${CMAKE_CURRENT_BINARY_DIR}/modules/pr_prosper_opengl/external_libs/prosper_opengl/${CONFIG_BUILD_TYPE}/prosper_opengl${OS_LIB_BIN_EXT}" "modules/graphics/opengl/" OPTIONAL)
