@@ -1,0 +1,6 @@
+{
+    "name": "OpenGL",
+    "module_name": "pr_prosper_opengl",
+    "install_directory": "modules/graphics/opengl/",
+    "release_directory": "modules/graphics/opengl/"
+}
