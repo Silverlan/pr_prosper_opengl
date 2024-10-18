@@ -11,4 +11,8 @@ pr_add_dependency(${PROJ_NAME} prosper_opengl TARGET PUBLIC)
 pr_add_headers(${PROJ_NAME} "include/")
 pr_add_sources(${PROJ_NAME} "src/")
 
-pr_finalize(${PROJ_NAME} FOLDER modules/graphics/opengl)
+
+pr_set_target_folder(prosper_opengl modules/rendering/opengl)
+pr_set_target_folder(glad modules/rendering/opengl)
+
+pr_finalize(${PROJ_NAME} FOLDER modules/rendering/opengl)
