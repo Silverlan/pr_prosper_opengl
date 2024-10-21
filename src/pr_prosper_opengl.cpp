@@ -5,8 +5,14 @@
 #include <prosper_opengl_definitions.hpp>
 #include <gl_context.hpp>
 
+#ifdef __linux__
+#define DLLEXPORT __attribute__((visibility("default")))
+#else
+#define DLLEXPORT __declspec(dllexport)
+#endif
+
 extern "C" {
-__declspec(dllexport) bool initialize_render_api(const std::string &engineName, bool enableValidation, std::shared_ptr<prosper::IPrContext> &outContext, std::string &errMsg)
+DLLEXPORT bool initialize_render_api(const std::string &engineName, bool enableValidation, std::shared_ptr<prosper::IPrContext> &outContext, std::string &errMsg)
 {
 	outContext = prosper::GLContext::Create(engineName, enableValidation);
 	return true;
